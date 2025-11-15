@@ -1,0 +1,8 @@
+2025-11-15 19:21:28 | INFO | Config loaded. DB_PATH: C:\Users\aksha\Downloads\Project\ITUS_Project\sectoral_ebitda_margins.db, TABLE_NAME: sectoral_ebitda_margins
+2025-11-15 19:23:16 | INFO | Config loaded. DB_PATH: C:\Users\aksha\Downloads\Project\ITUS_Project\sectoral_ebitda_margins.db, TABLE_NAME: sectoral_ebitda_margins
+2025-11-15 20:14:00 | INFO | Config loaded. DB_PATH: C:\Users\aksha\Downloads\Project\ITUS_Project\sectoral_ebitda_margins.db, TABLE_NAME: sectoral_ebitda_margins
+2025-11-15 20:21:29 | INFO | Config loaded. DB_PATH: C:\Users\aksha\Downloads\Project\ITUS_Project\sectoral_ebitda_margins.db, TABLE_NAME: sectoral_ebitda_margins
+2025-11-15 20:30:29 | INFO | Config loaded. DB_PATH: C:\Users\aksha\Downloads\Project\ITUS_Project\sectoral_ebitda_margins.db, TABLE_NAME: sectoral_ebitda_margins
+2025-11-15 20:44:38 | INFO | Config loaded. DB_PATH: C:\Users\aksha\Downloads\Project\ITUS_Project\sectoral_ebitda_margins.db, TABLE_NAME: sectoral_ebitda_margins
+2025-11-15 20:44:38 | INFO | Function: _query_single_data | Args: ['Auto & Auto Components', 'curr_ttm_ebitda_margins', '2009-03-31'] | Status: SUCCESS | Time: 11.19 ms
+2025-11-15 20:44:38 | INFO | Function: _query_series | Args: ['Auto & Auto Components', 'curr_ttm_ebitda_margins', '2009-03-31', '2010-03-31'] | Status: SUCCESS | Time: 1.28 ms
