@@ -7,7 +7,7 @@ import os
 print("--- TEST 1: GET SINGLE DATA ---")
 sector = "Auto & Auto Components"
 field = "curr_ttm_ebitda_margins"
-# We format the date just like the real script does
+
 date_obj = datetime(2009, 3, 31)
 date_str = sectoral_data_udf._format_date(date_obj)
 
