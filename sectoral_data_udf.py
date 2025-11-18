@@ -12,7 +12,6 @@ from datetime import datetime
 
 # --- Configuration & Logging Setup ---
 
-# Add script directory to path to find modules (for xlwings UDF server)
 sys.path.append(os.path.dirname(__file__))
 
 # Setup logging
@@ -45,7 +44,6 @@ def get_config():
     """Finds and reads the config.ini file."""
     config = configparser.ConfigParser()
     
-    # Try script directory, then current working directory
     script_dir = os.path.dirname(__file__)
     config_paths = [
         os.path.join(script_dir, 'config.ini'),
@@ -67,7 +65,6 @@ try:
     TABLE_NAME = config.get('table_name')
     
     # Field validation: Prevent SQL injection on column/table names
-    # Only allow these fields to be queried.
     SAFE_FIELDS = ('curr_ttm_ebitda_margins', 'sector', 'date')
     
     # Basic validation for table name (allow alphanumeric and underscore)
@@ -154,19 +151,16 @@ def _format_date(date_obj):
         return date_obj
     # Handle Excel's number-based dates if xlwings doesn't convert them
     if isinstance(date_obj, (int, float)):
-        # This conversion is tricky and platform-dependent.
-        # xlwings *usually* handles this.
         logger.warning(f"Received numeric date {date_obj}, treating as string.")
-        return str(date_obj) # Fallback, but might fail in SQL
+        return str(date_obj) 
     raise ValueError("Invalid date format. Expected YYYY-MM-DD or Excel date.")
 
-@functools.lru_cache(maxsize=256) # Cache up to 256 recent queries
+@functools.lru_cache(maxsize=256) 
 @log_and_time
 def _query_single_data(sector, field, date_str):
     """Internal function to fetch a single data point."""
     safe_field = _validate_field(field)
     
-    # Use date() function in SQL to ignore time part
     query = f"SELECT {safe_field} FROM {TABLE_NAME} WHERE sector = ? AND date(date) = ?"
     
     with get_db_connection() as conn:
@@ -524,11 +518,10 @@ def _get_columns():
     return cols
 
 # ---------------------------
-# CLI test runner (quick tests)
+# CLI test runner 
 # ---------------------------
 if __name__ == "__main__":
     print("Running quick CLI tests against DB:", DB_PATH)
-    # Replace these with actual sample values from your DB
     sample_sector = "Capital Goods"
     sample_date = "2025-06-30"
     field = "curr_ttm_ebitda_margins"
