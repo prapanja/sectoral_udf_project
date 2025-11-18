@@ -6,7 +6,7 @@ It uses **xlwings** to expose Python functions as Excel UDFs and provides clean,
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 
@@ -23,7 +23,7 @@ sectoral_udf_project/
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 ### 1. Create and activate the virtual environment
 
@@ -54,9 +54,9 @@ Or copy the downloaded `xlwings.xlam` manually into:
 
 ---
 
-## 🗄️ Configure the Database (config.ini)
+##  Configure the Database (config.ini)
 
-Your config.ini must contain:
+config.ini must contain:
 
 ```ini
 [database]
@@ -67,7 +67,7 @@ date_format = %Y-%m-%d
 
 ---
 
-## ⚡ Create Database Index (Performance)
+##  Create Database Index (Performance)
 
 Run this:
 
@@ -87,13 +87,11 @@ ON sectoral_ebitda_margins (date);
 
 ---
 
-## 🧠 Python UDFs Available in Excel
-
-The following Python functions automatically become Excel formulas:
+## Python UDFs Available in Excel
 
 ---
 
-### 1️⃣ `get_sectoral_quarterly_data(sector, field, date)`
+###  `get_sectoral_quarterly_data(sector, field, date)`
 
 Returns a single quarterly value.
 
@@ -105,7 +103,7 @@ Returns a single quarterly value.
 
 ---
 
-### 2️⃣ `get_series(sector, field, start_date, end_date)`
+###  `get_series(sector, field, start_date, end_date)`
 
 Returns a spill range:
 `date | value`
@@ -118,7 +116,7 @@ Returns a spill range:
 
 ---
 
-### 3️⃣ `get_quarterly_matrix(date, field)`
+###  `get_quarterly_matrix(date, field)`
 
 Returns:
 `sector | date | value`
@@ -131,7 +129,7 @@ Returns:
 
 ---
 
-### 4️⃣ `get_all_revenue_growth(sector, field)`
+###  `get_all_revenue_growth(sector, field)`
 
 All dates for that sector.
 
@@ -143,23 +141,23 @@ All dates for that sector.
 
 ---
 
-## 🖥️ Excel Setup Instructions (IMPORTANT)
+##  Excel Setup Instructions 
 
 Inside Excel → **xlwings tab**:
 
-### ✔ Interpreter (FULL PATH):
+###  Interpreter (FULL PATH):
 
 ```
-C:\Users\aksha\Desktop\sectoral_udf_project\.venv\Scripts\python.exe
+C:\Users\Desktop\sectoral_udf_project\.venv\Scripts\python.exe
 ```
 
-### ✔ UDF Modules:
+###  UDF Modules:
 
 ```
-C:\Users\aksha\Desktop\sectoral_udf_project\sectoral_data_udf.py
+C:\Users\Desktop\sectoral_udf_project\sectoral_data_udf.py
 ```
 
-### ✔ Then click:
+###  Then click:
 
 ```
 Restart UDF Server
@@ -169,7 +167,7 @@ Restart UDF Server
 
 ---
 
-## 🧪 Testing the Functions
+##  Testing the Functions
 
 After restarting the UDF server, test:
 
@@ -177,11 +175,9 @@ After restarting the UDF server, test:
 =get_sectoral_quarterly_data("Capital Goods","curr_ttm_ebitda_margins","2025-06-30")
 ```
 
-If errors occur, check the console window.
-
 ---
 
-## 🚀 GitHub Submission Steps
+##  GitHub Submission Steps
 
 ```bash
 git init
@@ -194,38 +190,5 @@ git push -u origin main
 
 ---
 
-## ✔️ Deliverables Completed
 
-* Python UDF Module
-* Excel UDF integration via xlwings
-* SQLite database connection
-* Indexing for performance
-* Configurable setup
-* README documentation
-* GitHub-ready structure
-
----
-
-## 📌 Notes
-
-* Do **not** upload `.venv`
-* Ensure `config.ini` is in project root
-* Excel formulas require the UDF Server to be running
-* Use **xlwings 0.30.12** for maximum compatibility
-
----
-
-# ✅ Project Ready for Submission
-
-This README meets professional and academic standards.
-
-```
-End of README.md
-```
-
-```
-
-
-
-```
 
