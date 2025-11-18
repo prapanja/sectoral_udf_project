@@ -32,7 +32,6 @@ def apply_schema(db_path, table_name, schema_file_path):
         with open(schema_file_path, 'r') as f:
             sql_script = f.read()
             
-        # Replace placeholder table name in schema.sql with config table_name
         sql_script = sql_script.replace("sectoral_ebitda_margins", table_name)
 
         conn = sqlite3.connect(db_path)
@@ -60,7 +59,6 @@ if __name__ == "__main__":
         TABLE_NAME = config.get('table_name')
         SCHEMA_FILE = 'schema.sql'
         
-        # Ensure paths are relative to this script
         script_dir = os.path.dirname(__file__)
         db_full_path = os.path.join(script_dir, DB_PATH)
         schema_full_path = os.path.join(script_dir, SCHEMA_FILE)
